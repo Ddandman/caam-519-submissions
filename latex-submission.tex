@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{CAAM 519, Homework #2:\LaTeX\ Submission}
+\author{\textt{dac12}}
+\date{September 30, 2021}
+
+\begin{document}
+
+\maketitle
+
+\section{Communicating with remote machines via ssh}
+\begin{verbatim}
+    ssh 10.0.2.15
+    Welcome Ubuntu User
+    ubuntu
+    ubuntu-VirtualBox:$
+\end{verbatim}
+
+\section{A script to build a latex document while hiding auxiliary files}
+
+#!/bin/bash
+
+read Projectname       \quad\quad Taking a project name as an input
+
+mkdir -p .build         \quad\quad making a hidden directory called .build
+
+new name = "Project name+.tex"      
+
+pdflatex new name \quad\quad creating a tex document with the new name
+
+mv $Projectname.aux .build$      \quad\quad send auxiliary files to .build
+
+mv $Projectname.log .build
+
+mv $textput.log .build\\
+
+Two ways that this code could lead to undesirable behavior is if the project files are also uploaded to the build directory, and if the auxiliary files get sent to the main directory.
+\end{document}
